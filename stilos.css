@@ -1,0 +1,304 @@
+:root {
+    --primario:#E8AEF2;
+    --secundario:#4D2155;
+    --terciario:#F6AFEC;
+    --gris:#7B797B;
+    --blanco:#ffffff;
+}
+/* general */
+html{
+    font-size: 62,5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+.navegacion-principal,
+.mis-servicios,
+.formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /*hack para BOX MODEL */
+  }
+
+body {
+    font-size: 16px;
+    font-family:'Concert One', cursive;
+    background-image: linear-gradient(to top,#F5E6F9  0%, var(--blanco) 100%);
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* termina general */
+
+/* termina utilidades*/
+
+/* header del body */
+.titulo {
+    font-family: 'Satisfy', cursive;
+}
+
+.titulo span {
+    font-family: 'Concert One', cursive;
+    font-size: 1rem;
+    font-weight: 100;
+}
+/* termina header del body */
+
+/* navegacion */
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+} 
+
+.navegacion-principal a  {
+    display: block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+.navegacion-principal a:hover  {
+    background-color: var(--terciario);
+    color: var(--secundario);
+   
+}
+
+.nav-bg {
+    background-color: var(--primario);
+}
+/* termina navegacion*/
+
+/* header FOTO y BOTON */
+
+.hero {
+    background-image: url(../img/header.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.contenido-hero {
+    position: absolute;
+    padding: 20px;
+    background-color: rgba(0,0,0, .5);
+    background-color: rgb(0 0 0 / 50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.boton {
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: .5rem;
+    border: none;
+}
+
+@media (min-width: 480px) {
+    .boton {
+        width: auto;
+        /* esto sirve mas que nada para cuando el boton abarca casi todo o todo el with del contenedor*/
+    }
+} 
+
+.boton:hover {
+    cursor: pointer;
+}
+/* termina header FOTO y BOTON*/
+
+/*utilidades */
+.wsmall100 {
+    width: 100%;
+}
+
+@media (min-width: 760px) {
+    .wsmall100 {
+        width: auto;
+    }
+} 
+
+.flex {
+    display: flex;
+}
+
+.alinear-derecha {
+    justify-content: flex-end;
+}
+/* termina utilidades */
+
+/* no pude cambiar la posicion del icono de ubicacion con css por eso lo puse dentro de la etiqueta p (en relaidad no funciono con usar div class) xd lol */
+
+/*contenedor de servicios */
+.contenedor {
+    max-width:120rem;
+    Width: 60%;
+    margin: 0 auto 0 auto;
+    padding: 1rem;
+   } 
+
+.sombra {
+    -webkit-box-shadow: 10px 10px 34px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 34px -1px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 34px -1px rgba(0,0,0,0.75);
+    border-radius: 0.5rem;
+}
+
+.mis-servicios {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .mis-servicios {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;   
+    }
+} 
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: 600;   
+}
+
+.servicio p {
+    line-height: 1.5;
+    padding: 0.5rem;
+    color: #7B797B;
+}
+
+.servicio .icono {
+    height: 5rem;
+    width: 5rem;
+    background-color: var(--terciario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* termina contenedor */
+
+/*contacto dentro de contenedor*/
+.formulario {
+    background-color: #CFC9C8;
+    width: min(40rem, 65%);/*utiliza el valor mas pequeño*/
+    margin: 0 auto 0 auto;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+.formulario h2 {
+    padding:0.5;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: var(--secundario);  
+}
+
+/*campos del formulario */
+@media (min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 15rem;
+        column-gap: 1rem;  
+    }
+
+    .campos:nth-child(3),
+    .campos:nth-child(4) {
+        grid-column: 1 / 3;
+    }    
+} 
+.contenedor-campos {
+    display: grid;
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    color: var(--blanco);
+    font-weight: 400;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.campo textarea {
+    height: 10rem;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1.2rem;
+    border-radius: .5rem;
+}
+/* termina contacto dentro de contenedor */ 
+
+/* footer*/
+.piedepagina {
+    text-align: center;
+}
+
+/*termina el footer */
+
+
+
